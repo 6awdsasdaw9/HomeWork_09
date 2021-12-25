@@ -18,9 +18,5 @@ public class Explosion : MonoBehaviour
         }
     }
 
-    public void MasBoom(List<Rigidbody> Objects)
-    {
-        for (int i = 0; i < Objects.Count; i++) Objects[i].AddForce(2, 2, 2, ForceMode.Impulse);
-    }
-
+  
 }
