@@ -5,7 +5,7 @@ public class Man : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private AudioEvent explosionEvent;
     [SerializeField] AudioSource explosionAudioSource;
-    private Man Enemy;
+    private GameObject Enemy;
     
     private Animator anim;
     private Explosion arms;
@@ -39,7 +39,7 @@ public class Man : MonoBehaviour
         transform.LookAt(target);
         AnimState("Walk");
     }
-    public void  Attak(Man Enemy)
+    public void  Attak(GameObject Enemy)
     {
         this.Enemy = Enemy;
         transform.LookAt(Enemy.transform);

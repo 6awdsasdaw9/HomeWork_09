@@ -41,7 +41,8 @@ public class GameController_Mans : MonoBehaviour
     void ThisAttakTo(Man First, List<Man> Enemy)
     {
       
-            First.Attak(Enemy[0]);
+
+            First.Attak(Enemy[0].gameObject);
       
                if (First == SuperMan) _score.AddCount();
              else _score.ResetCount();

@@ -5,7 +5,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] float _power;
     [SerializeField] float _radiys;
     Rigidbody[] rb;
-    public void Boom(Man Enemy)
+    public void Boom(GameObject Enemy)
     {
         rb = Enemy.GetComponentsInChildren<Rigidbody>();
         float distance = Vector3.Distance(transform.position, Enemy.transform.position);
@@ -16,4 +16,5 @@ public class Explosion : MonoBehaviour
             rb[0].AddForce(direction.normalized * _power * (_radiys - distance));
         }
     }
+  
 }

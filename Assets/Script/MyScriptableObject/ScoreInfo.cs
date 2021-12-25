@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptable Object/Score")]
@@ -12,17 +10,13 @@ public class ScoreInfo : ScriptableObject
     private event ScoreDelegate scoreEvent;
     public event ScoreDelegate ScoreEvent
     {
-        
-        add
-        {
+        add {
             scoreEvent -= value;
             scoreEvent += value; 
         }
         remove => ScoreEvent -= value;
     }
-
-
-
+        
 
     public int GetCount => this._count;
     public void AddCount()
@@ -37,21 +31,17 @@ public class ScoreInfo : ScriptableObject
     }
     public void DeductCount()
     {
-        if ( _count > 0)
+        if (_count > 0)
         {
-            _count --;
+            _count--;
             Raise();
         }
         else return;
 
     }
-
     private void Raise()=> scoreEvent?.Invoke();
-
-
-    
-
 }
+
 
 
 
